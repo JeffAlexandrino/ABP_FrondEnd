@@ -1,3 +1,8 @@
+"scripts": {
+  "build:css": "postcss src/css/app.css -o public/css/style.css"
+}
+
+
 {
   "name": "abp-front-end",
   "private": true,
@@ -11,6 +16,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "flowbite": "^2.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0"
@@ -33,5 +39,10 @@
   "browserslist": "> 0.20%, not dead",
   "engines": {
     "node": ">=16"
-  }
+  },
+  "description": "<p align=\"center\">\r   <img height=\"100\" src=\"public/img/satclogo.png\">\r   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r   <img height=\"100\" src=\"public/img/englogo.jpg\">\r </p>",
+  "main": ".prettierrc.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
