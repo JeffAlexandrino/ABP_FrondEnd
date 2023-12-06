@@ -1,20 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-// import { ListaComprasProvider } from "./context/ListaComprasContext";
 import RootLayout from "./layouts/RootLayout";
 import Home from "./routes/Home";
-// import ListaCompras from "./routes/ListaCompras";
-// import Produtos from "./routes/Produtos";
-// import ProdutoExibe from "./routes/ProdutoExibe";
 import AuthLayout from "./layouts/AuthLayout";
 import Login from "./routes/auth/Login";
 import ForgotPassword from "./routes/auth/ForgotPassword";
 import BookList from "./routes/books/BookList";
 import BookForm from "./routes/books/BookForm";
-import BookDetail from "./routes/books/BookDetail";
 import UserList from "./routes/users/UserList";
 import UserForm from "./routes/users/UserForm";
-import UserDetail from "./routes/users/UserDetail";
 
 const router = createBrowserRouter([
   {
