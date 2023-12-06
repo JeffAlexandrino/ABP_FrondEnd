@@ -1,16 +1,10 @@
 import { NavLink } from "react-router-dom";
-
-function mostraModal() {
-  let popUpModal = document.getElementById("popup-modal");
-  popUpModal.classList.remove("hidden");
-}
-
-function escondeModal() {
-  let popUpModal = document.getElementById("popup-modal");
-  popUpModal.classList.add("hidden");
-}
+import { Button, Modal } from 'flowbite-react';
+import { useState } from 'react';
 
 export default function UserList() {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div className="p-6">
       <h2 className="mb-10 flex justify-between text-4xl font-extrabold">
@@ -58,7 +52,7 @@ export default function UserList() {
                   data-modal-target="popup-modal"
                   data-modal-toggle="popup-modal"
                   type="button"
-                  onClick={mostraModal}>
+                  onClick={() => setOpenModal(true)}>
                   Excluir
                 </a>
               </td>
@@ -80,7 +74,7 @@ export default function UserList() {
                   data-modal-target="popup-modal"
                   data-modal-toggle="popup-modal"
                   type="button"
-                  onClick={mostraModal}>
+                  onClick={() => setOpenModal(true)}>
                   Excluir
                 </a>
               </td>
@@ -102,7 +96,7 @@ export default function UserList() {
                   data-modal-target="popup-modal"
                   data-modal-toggle="popup-modal"
                   type="button"
-                  onClick={mostraModal}>
+                  onClick={() => setOpenModal(true)}>
                   Excluir
                 </a>
               </td>
@@ -124,7 +118,7 @@ export default function UserList() {
                   data-modal-target="popup-modal"
                   data-modal-toggle="popup-modal"
                   type="button"
-                  onClick={mostraModal}>
+                  onClick={() => setOpenModal(true)}>
                   Excluir
                 </a>
               </td>
@@ -146,7 +140,7 @@ export default function UserList() {
                   data-modal-target="popup-modal"
                   data-modal-toggle="popup-modal"
                   type="button"
-                  onClick={mostraModal}>
+                  onClick={() => setOpenModal(true)}>
                   Excluir
                 </a>
               </td>
@@ -168,7 +162,7 @@ export default function UserList() {
                   data-modal-target="popup-modal"
                   data-modal-toggle="popup-modal"
                   type="button"
-                  onClick={mostraModal}>
+                  onClick={() => setOpenModal(true)}>
                   Excluir
                 </a>
               </td>
@@ -177,38 +171,28 @@ export default function UserList() {
         </table>
       </div>
 
-      <div
-        id="popup-modal"
-        tabIndex="-1"
-        className="fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0">
-        <div className="relative max-h-full w-full max-w-md p-4">
-          <div className="relative rounded-lg bg-white shadow">
-            <button
-              type="button"
-              className="absolute end-2.5 top-3 ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
-              data-modal-hide="popup-modal">
-              <span className="sr-only">Fechar</span>
-            </button>
-            <div className="p-4 text-center md:p-5">
-              <h3 className="mb-5 text-lg font-normal text-gray-500">Tem certeza que vai excluir o Usuário?</h3>
-              <button
-                onClick={escondeModal}
-                data-modal-hide="popup-modal"
-                type="button"
-                className="me-2 inline-flex items-center rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300">
+
+
+      <Modal show={openModal} size="md" onClose={() => setOpenModal(false)} popup>
+        <Modal.Header />
+        <Modal.Body>
+          <div className="text-center">
+            <h3 className="mb-5 text-lg font-normal text-gray-500">
+            Tem certeza que vai excluir o Usuário?
+            </h3>
+            <div className="flex justify-center gap-4">
+              <Button color="failure" onClick={() => setOpenModal(false)}
+              className="me-2 inline-flex items-center rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300">
                 Sim
-              </button>
-              <button
-                onClick={escondeModal}
-                data-modal-hide="popup-modal"
-                type="button"
-                className="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200">
+              </Button>
+              <Button color="gray" onClick={() => setOpenModal(false)}
+              className="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200">
                 Não
-              </button>
+              </Button>
             </div>
           </div>
-        </div>
-      </div>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }
