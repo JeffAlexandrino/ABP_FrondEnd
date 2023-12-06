@@ -52,10 +52,6 @@ const router = createBrowserRouter([
         element: <BookForm />,
       },
       {
-        path: "/book-detail/:id",
-        element: <BookDetail />,
-      },
-      {
         path: "/users",
         element: <UserList />,
       },
@@ -66,10 +62,6 @@ const router = createBrowserRouter([
       {
         path: "/user-edit/:id",
         element: <UserForm />,
-      },
-      {
-        path: "/user-detail/:id",
-        element: <UserDetail />,
       },
     ],
   },

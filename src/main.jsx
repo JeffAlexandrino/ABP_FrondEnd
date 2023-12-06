@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import "./css/style.css";
-import "./css/media-query.css";
+import 'flowbite';
 
 import App from "./App";
 

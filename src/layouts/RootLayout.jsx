@@ -8,7 +8,7 @@ export default function RootLayout() {
   const lastPos = useRef(0);
 
   const navLinkClassName =
-    "mr-4 mt-4 block text-base font-medium text-slate-700 hover:text-teal-600 md:mt-0 md:inline-block";
+    "mr-4 mt-4 block text-base font-medium text-slate-700 hover:text-blue-600 md:mt-0 md:inline-block";
 
   function toggleMenu(event) {
     event.preventDefault();
@@ -51,24 +51,24 @@ export default function RootLayout() {
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between">
           <div className="sm:mr-8">
             <Link className="flex items-center" to="/">
-              <span className="self-center text-xl font-semibold text-teal-700">Demo Router</span>
+              <span className="self-center text-xl font-semibold text-blue-700">Library Guru</span>
             </Link>
           </div>
           <nav
             className={`order-last mt-2 w-full flex-grow items-center md:order-none md:mt-0 md:flex md:w-auto ${
               !isMenuOpen ? "hidden" : ""
             }`}>
-            <NavLink to="/home" className={({ isActive }) => `${navLinkClassName} ${isActive ? "text-teal-600" : ""}`} end>
+            <NavLink to="/home" className={({ isActive }) => `${navLinkClassName} ${isActive ? "text-blue-600" : ""}`} end>
               Home
             </NavLink>
             <NavLink
               to="/books"
-              className={({ isActive }) => `${navLinkClassName} ${isActive ? "text-teal-600" : ""}`}>
+              className={({ isActive }) => `${navLinkClassName} ${isActive ? "text-blue-600" : ""}`}>
               Lista de Livros
             </NavLink>
             <NavLink
               to="/users"
-              className={({ isActive }) => `${navLinkClassName} ${isActive ? "text-teal-600" : ""}`}>
+              className={({ isActive }) => `${navLinkClassName} ${isActive ? "text-blue-600" : ""}`}>
               Lista de Usuários
             </NavLink>
 
@@ -80,7 +80,7 @@ export default function RootLayout() {
           </nav>
           <div
             onClick={toggleMenu}
-            className="flex cursor-pointer items-center text-slate-700 hover:text-teal-600 sm:ml-6 md:hidden">
+            className="flex cursor-pointer items-center text-slate-700 hover:text-blue-600 sm:ml-6 md:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

@@ -1,110 +1,270 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
-const booksData = [];
-
-function mostraModal(){
-    let popUpModal = document.getElementById('popup-modal')
-    popUpModal.classList.remove('hidden')
+function mostraModal() {
+  let popUpModal = document.getElementById("popup-modal");
+  popUpModal.classList.remove("hidden");
 }
 
-function escondeModal(){
-    let popUpModal = document.getElementById('popup-modal')
-    popUpModal.classList.add('hidden')
+function escondeModal() {
+  let popUpModal = document.getElementById("popup-modal");
+  popUpModal.classList.add("hidden");
 }
 
 export default function BookList() {
+  return (
+    <div className="p-6">
+      <h2 className="mb-10 flex justify-between text-4xl font-extrabold">
+        Lista de Livros
+        <NavLink
+          to="/book-create"
+          className="mb-2 rounded-lg bg-purple-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300">
+          Cadastrar Livro
+        </NavLink>
+      </h2>
 
-    const [items] = useState(booksData);
-
-    return (
-        <div className="p-6">
-
-            <h2 className="text-4xl font-extrabold dark:text-white mb-10 flex justify-between">
-                Lista de Livros
-
-                <NavLink to="/book-create"
-                    className="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2"
-                >
-                    Cadastrar Livro
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table className="w-full text-left text-sm text-gray-500 rtl:text-right">
+          <thead className="bg-gray-50 text-xs uppercase text-gray-700">
+            <tr>
+              <th scope="col" className="px-6 py-3">
+                Título do Livro
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Autor
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Categoria
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Preço
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Ação
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b odd:bg-white even:bg-gray-50">
+              <th scope="row" className="whitespace-nowrap px-6 py-4 font-medium text-gray-900">
+                Guia do Mochilheiro das Galáxias
+              </th>
+              <td className="px-6 py-4">Adams, Douglas</td>
+              <td className="px-6 py-4">Science Fiction</td>
+              <td className="px-6 py-4">R4 45,00</td>
+              <td className="px-6 py-4">
+                <NavLink className="font-medium text-blue-600 hover:underline" to="/book-edit/1">
+                  Editar
                 </NavLink>
-            </h2>
+                |
+                <a
+                  className="font-medium text-red-600 hover:underline"
+                  href="#"
+                  data-modal-target="popup-modal"
+                  data-modal-toggle="popup-modal"
+                  type="button"
+                  onClick={mostraModal}>
+                  Excluir
+                </a>
+              </td>
+            </tr>
 
+            <tr className="border-b odd:bg-white even:bg-gray-50">
+              <th scope="row" className="whitespace-nowrap px-6 py-4 font-medium text-gray-900">
+                A Revolução dos Bichos
+              </th>
+              <td className="px-6 py-4">George Orwell</td>
+              <td className="px-6 py-4">Ficção</td>
+              <td className="px-6 py-4">$12.99</td>
+              <td className="px-6 py-4">
+                <NavLink className="font-medium text-blue-600 hover:underline" to="/book-edit/1">
+                  Editar
+                </NavLink>
+                |
+                <a
+                  className="font-medium text-red-600 hover:underline"
+                  href="#"
+                  data-modal-target="popup-modal"
+                  data-modal-toggle="popup-modal"
+                  type="button"
+                  onClick={mostraModal}>
+                  Excluir
+                </a>
+              </td>
+            </tr>
+            <tr className="border-b odd:bg-white even:bg-gray-50">
+              <th scope="row" className="whitespace-nowrap px-6 py-4 font-medium text-gray-900">
+                O Senhor dos Anéis
+              </th>
+              <td className="px-6 py-4">J.R.R. Tolkien</td>
+              <td className="px-6 py-4">Fantasia</td>
+              <td className="px-6 py-4">$15.50</td>
+              <td className="px-6 py-4">
+                <NavLink className="font-medium text-blue-600 hover:underline" to="/book-edit/1">
+                  Editar
+                </NavLink>
+                |
+                <a
+                  className="font-medium text-red-600 hover:underline"
+                  href="#"
+                  data-modal-target="popup-modal"
+                  data-modal-toggle="popup-modal"
+                  type="button"
+                  onClick={mostraModal}>
+                  Excluir
+                </a>
+              </td>
+            </tr>
+            <tr className="border-b odd:bg-white even:bg-gray-50">
+              <th scope="row" className="whitespace-nowrap px-6 py-4 font-medium text-gray-900">
+                Cem Anos de Solidão
+              </th>
+              <td className="px-6 py-4">Gabriel García Márquez</td>
+              <td className="px-6 py-4">Realismo Mágico</td>
+              <td className="px-6 py-4">$9.99</td>
+              <td className="px-6 py-4">
+                <NavLink className="font-medium text-blue-600 hover:underline" to="/book-edit/1">
+                  Editar
+                </NavLink>
+                |
+                <a
+                  className="font-medium text-red-600 hover:underline"
+                  href="#"
+                  data-modal-target="popup-modal"
+                  data-modal-toggle="popup-modal"
+                  type="button"
+                  onClick={mostraModal}>
+                  Excluir
+                </a>
+              </td>
+            </tr>
+            <tr className="border-b odd:bg-white even:bg-gray-50">
+              <th scope="row" className="whitespace-nowrap px-6 py-4 font-medium text-gray-900">
+                Dom Quixote
+              </th>
+              <td className="px-6 py-4">Miguel de Cervantes</td>
+              <td className="px-6 py-4">Clássico</td>
+              <td className="px-6 py-4">$11.25</td>
+              <td className="px-6 py-4">
+                <NavLink className="font-medium text-blue-600 hover:underline" to="/book-edit/1">
+                  Editar
+                </NavLink>
+                |
+                <a
+                  className="font-medium text-red-600 hover:underline"
+                  href="#"
+                  data-modal-target="popup-modal"
+                  data-modal-toggle="popup-modal"
+                  type="button"
+                  onClick={mostraModal}>
+                  Excluir
+                </a>
+              </td>
+            </tr>
+            <tr className="border-b odd:bg-white even:bg-gray-50">
+              <th scope="row" className="whitespace-nowrap px-6 py-4 font-medium text-gray-900">
+                Harry Potter e a Pedra Filosofal
+              </th>
+              <td className="px-6 py-4">J.K. Rowling</td>
+              <td className="px-6 py-4">Fantasia</td>
+              <td className="px-6 py-4">$14.75</td>
+              <td className="px-6 py-4">
+                <NavLink className="font-medium text-blue-600 hover:underline" to="/book-edit/1">
+                  Editar
+                </NavLink>
+                |
+                <a
+                  className="font-medium text-red-600 hover:underline"
+                  href="#"
+                  data-modal-target="popup-modal"
+                  data-modal-toggle="popup-modal"
+                  type="button"
+                  onClick={mostraModal}>
+                  Excluir
+                </a>
+              </td>
+            </tr>
+            <tr className="border-b odd:bg-white even:bg-gray-50">
+              <th scope="row" className="whitespace-nowrap px-6 py-4 font-medium text-gray-900">
+                1984
+              </th>
+              <td className="px-6 py-4">George Orwell</td>
+              <td className="px-6 py-4">Ficção Distópica</td>
+              <td className="px-6 py-4">$10.99</td>
+              <td className="px-6 py-4">
+                <NavLink className="font-medium text-blue-600 hover:underline" to="/book-edit/1">
+                  Editar
+                </NavLink>
+                |
+                <a
+                  className="font-medium text-red-600 hover:underline"
+                  href="#"
+                  data-modal-target="popup-modal"
+                  data-modal-toggle="popup-modal"
+                  type="button"
+                  onClick={mostraModal}>
+                  Excluir
+                </a>
+              </td>
+            </tr>
+            <tr className="border-b odd:bg-white even:bg-gray-50">
+              <th scope="row" className="whitespace-nowrap px-6 py-4 font-medium text-gray-900">
+                A Metamorfose
+              </th>
+              <td className="px-6 py-4">Franz Kafka</td>
+              <td className="px-6 py-4">Ficção Absurda</td>
+              <td className="px-6 py-4">$8.50</td>
+              <td className="px-6 py-4">
+                <NavLink className="font-medium text-blue-600 hover:underline" to="/book-edit/1">
+                  Editar
+                </NavLink>
+                |
+                <a
+                  className="font-medium text-red-600 hover:underline"
+                  href="#"
+                  data-modal-target="popup-modal"
+                  data-modal-toggle="popup-modal"
+                  type="button"
+                  onClick={mostraModal}>
+                  Excluir
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" className="px-6 py-3">
-                                Título do Livro
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Autor
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Categoria
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Preço
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Ação
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Guia do Mochilheiro das Galáxias
-                            </th>
-                            <td className="px-6 py-4">
-                                Adams, Douglas
-                            </td>
-                            <td className="px-6 py-4">
-                                Science Fiction
-                            </td>
-                            <td className="px-6 py-4">
-                                R4 45,00
-                            </td>
-                            <td className="px-6 py-4">
-                                <NavLink className="font-medium text-blue-600 dark:text-blue-500 hover:underline" to="/book-edit/1">Editar</NavLink> |
-                                <NavLink className="font-medium text-green-600 dark:text-green-500 hover:underline" to="/book-detail/1">Detalhes</NavLink> |
-                                <a 
-                                className="font-medium text-red-600 dark:text-red-500 hover:underline"
-                                href="#"
-                                data-modal-target="popup-modal"
-                                data-modal-toggle="popup-modal"
-                                type="button"
-                                onClick={mostraModal}
-                                >Excluir</a>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
-
-
-<div id="popup-modal" tabIndex="-1" className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-    <div className="relative p-4 w-full max-w-md max-h-full">
-        <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-            <button type="button" className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
-                <span className="sr-only">Fechar</span>
+      <div
+        id="popup-modal"
+        tabIndex="-1"
+        className="fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0">
+        <div className="relative max-h-full w-full max-w-md p-4">
+          <div className="relative rounded-lg bg-white shadow">
+            <button
+              type="button"
+              className="absolute end-2.5 top-3 ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
+              data-modal-hide="popup-modal">
+              <span className="sr-only">Fechar</span>
             </button>
-            <div className="p-4 md:p-5 text-center">
-                <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Tem certeza que vai excluir o livro?</h3>
-                <button onClick={escondeModal} data-modal-hide="popup-modal" type="button" className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center me-2">
-                    Sim
-                </button>
-                <button onClick={escondeModal} data-modal-hide="popup-modal" type="button" className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
-                    Não
-                </button>
+            <div className="p-4 text-center md:p-5">
+              <h3 className="mb-5 text-lg font-normal text-gray-500">Tem certeza que vai excluir o livro?</h3>
+              <button
+                onClick={escondeModal}
+                data-modal-hide="popup-modal"
+                type="button"
+                className="me-2 inline-flex items-center rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300">
+                Sim
+              </button>
+              <button
+                onClick={escondeModal}
+                data-modal-hide="popup-modal"
+                type="button"
+                className="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200">
+                Não
+              </button>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-
-        </div>
-    );
+  );
 }
