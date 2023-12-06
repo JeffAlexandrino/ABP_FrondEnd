@@ -64,7 +64,7 @@ export default function UserList() {
               <td className="px-6 py-4">joao.santos@email.com</td>
               <td className="px-6 py-4">(987) 654-3210</td>
               <td className="px-6 py-4">
-                <NavLink className="font-medium text-blue-600 hover:underline" to="/user-edit/1">
+                <NavLink className="font-medium text-blue-600 hover:underline" to="/user-edit/2">
                   Editar
                 </NavLink>
                 |
@@ -86,7 +86,7 @@ export default function UserList() {
               <td className="px-6 py-4">ana.oliveira@email.com</td>
               <td className="px-6 py-4">(111) 222-3333</td>
               <td className="px-6 py-4">
-                <NavLink className="font-medium text-blue-600 hover:underline" to="/user-edit/1">
+                <NavLink className="font-medium text-blue-600 hover:underline" to="/user-edit/3">
                   Editar
                 </NavLink>
                 |
@@ -108,7 +108,7 @@ export default function UserList() {
               <td className="px-6 py-4">pedro.almeida@email.com</td>
               <td className="px-6 py-4">(555) 444-3333</td>
               <td className="px-6 py-4">
-                <NavLink className="font-medium text-blue-600 hover:underline" to="/user-edit/1">
+                <NavLink className="font-medium text-blue-600 hover:underline" to="/user-edit/4">
                   Editar
                 </NavLink>
                 |
@@ -130,7 +130,7 @@ export default function UserList() {
               <td className="px-6 py-4">sofia.ferreira@email.com</td>
               <td className="px-6 py-4">(999) 888-7777</td>
               <td className="px-6 py-4">
-                <NavLink className="font-medium text-blue-600 hover:underline" to="/user-edit/1">
+                <NavLink className="font-medium text-blue-600 hover:underline" to="/user-edit/5">
                   Editar
                 </NavLink>
                 |
@@ -152,7 +152,7 @@ export default function UserList() {
               <td className="px-6 py-4">carlos.machado@email.com</td>
               <td className="px-6 py-4">(777) 666-5555</td>
               <td className="px-6 py-4">
-                <NavLink className="font-medium text-blue-600 hover:underline" to="/user-edit/1">
+                <NavLink className="font-medium text-blue-600 hover:underline" to="/user-edit/6">
                   Editar
                 </NavLink>
                 |

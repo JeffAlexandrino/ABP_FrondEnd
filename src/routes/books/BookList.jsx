@@ -44,7 +44,7 @@ export default function BookList() {
               </th>
               <td className="px-6 py-4">Adams, Douglas</td>
               <td className="px-6 py-4">Science Fiction</td>
-              <td className="px-6 py-4">R4 45,00</td>
+              <td className="px-6 py-4">$ 45,00</td>
               <td className="px-6 py-4">
                 <NavLink className="font-medium text-blue-600 hover:underline" to="/book-edit/1">
                   Editar
